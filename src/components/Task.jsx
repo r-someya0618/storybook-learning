@@ -1,4 +1,4 @@
-import { PropType } from 'prop-types'
+import PropType from 'prop-types'
 
 export default function Task({ task: { id, title, state } }) {
   return (
@@ -26,7 +26,8 @@ export default function Task({ task: { id, title, state } }) {
   )
 }
 
-Task.prototype = {
+// JSでpropsの型定義したい時
+Task.propTypes = {
   task: PropType.shape({
     id: PropType.string.isRequired,
     title: PropType.string.isRequired,
